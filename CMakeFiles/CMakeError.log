@@ -1,0 +1,204 @@
+Performing C++ SOURCE FILE Test ABSL_INTERNAL_AT_LEAST_CXX17 failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-098r5z
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_689f3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  src.cxx
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D ABSL_INTERNAL_AT_LEAST_CXX17 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_689f3.dir\Debug\\" /Fd"cmTC_689f3.dir\Debug\vc143.pdb" /external:W3 /Gd /TP /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-098r5z\src.cxx"
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-098r5z\src.cxx(3,1): fatal  error C1189: #error:  "The compiler defaults or is configured for C++ < 17" [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-098r5z\cmTC_689f3.vcxproj]
+
+
+Source file was:
+#ifdef _MSC_VER
+#  if _MSVC_LANG < 201700L
+#    error "The compiler defaults or is configured for C++ < 17"
+#  endif
+#elif __cplusplus < 201700L
+#  error "The compiler defaults or is configured for C++ < 17"
+#endif
+int main() { return 0; }
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-yyn00a
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_71c3a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  src.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_71c3a.dir\Debug\\" /Fd"cmTC_71c3a.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-yyn00a\src.c"
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-yyn00a\src.c(1,10): fatal  error C1083: Datei (Include) kann nicht geöffnet werden: "pthread.h": No such file or directory [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-yyn00a\cmTC_71c3a.vcxproj]
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-qtoi5a
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_37e5a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_37e5a.dir\Debug\\" /Fd"cmTC_37e5a.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-qtoi5a\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "pthreads.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-qtoi5a\cmTC_37e5a.vcxproj]
+
+
+
+Determining if the function pthread_create exists in the pthread failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-lqaf4b
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_bdfc5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bdfc5.dir\Debug\\" /Fd"cmTC_bdfc5.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lqaf4b\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "pthread.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lqaf4b\cmTC_bdfc5.vcxproj]
+
+
+
+Determining if the function res_servicename exists failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-zcz2mh
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_34764.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=res_servicename /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_34764.dir\Debug\\" /Fd"cmTC_34764.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-zcz2mh\CheckFunctionExists.c"
+CheckFunctionExists.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "res_servicename" in Funktion "main". [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-zcz2mh\cmTC_34764.vcxproj]
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-zcz2mh\Debug\cmTC_34764.exe : fatal error LNK1120: 1 nicht aufgelöste Externe [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-zcz2mh\cmTC_34764.vcxproj]
+
+
+
+Determining if the function res_servicename exists in the resolv failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-21py1v
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_24f36.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=res_servicename /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_24f36.dir\Debug\\" /Fd"cmTC_24f36.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-21py1v\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "resolv.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-21py1v\cmTC_24f36.vcxproj]
+
+
+
+Determining if the function gethostbyname exists failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-lu6ep2
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a4cf9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyname /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a4cf9.dir\Debug\\" /Fd"cmTC_a4cf9.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lu6ep2\CheckFunctionExists.c"
+CheckFunctionExists.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "gethostbyname" in Funktion "main". [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lu6ep2\cmTC_a4cf9.vcxproj]
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lu6ep2\Debug\cmTC_a4cf9.exe : fatal error LNK1120: 1 nicht aufgelöste Externe [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lu6ep2\cmTC_a4cf9.vcxproj]
+
+
+
+Determining if the function gethostbyname exists in the nsl failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-h87u8k
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_a716d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyname /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a716d.dir\Debug\\" /Fd"cmTC_a716d.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-h87u8k\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "nsl.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-h87u8k\cmTC_a716d.vcxproj]
+
+
+
+Determining if the function gethostbyname exists in the socket failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-lrz9n6
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_ee812.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=gethostbyname /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ee812.dir\Debug\\" /Fd"cmTC_ee812.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lrz9n6\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "socket.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-lrz9n6\cmTC_ee812.vcxproj]
+
+
+
+Determining if the function socket exists failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-rxr7iu
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_1c91f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=socket /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1c91f.dir\Debug\\" /Fd"cmTC_1c91f.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-rxr7iu\CheckFunctionExists.c"
+CheckFunctionExists.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "socket" in Funktion "main". [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-rxr7iu\cmTC_1c91f.vcxproj]
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-rxr7iu\Debug\cmTC_1c91f.exe : fatal error LNK1120: 1 nicht aufgelöste Externe [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-rxr7iu\cmTC_1c91f.vcxproj]
+
+
+
+Determining if the function socket exists in the socket failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-4natze
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_6094c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=socket /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6094c.dir\Debug\\" /Fd"cmTC_6094c.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-4natze\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "socket.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-4natze\cmTC_6094c.vcxproj]
+
+
+
+Determining if the function clock_gettime exists failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-9rf0b1
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_90efb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=clock_gettime /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_90efb.dir\Debug\\" /Fd"cmTC_90efb.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-9rf0b1\CheckFunctionExists.c"
+CheckFunctionExists.obj : error LNK2019: Verweis auf nicht aufgelöstes externes Symbol "clock_gettime" in Funktion "main". [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-9rf0b1\cmTC_90efb.vcxproj]
+E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-9rf0b1\Debug\cmTC_90efb.exe : fatal error LNK1120: 1 nicht aufgelöste Externe [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-9rf0b1\cmTC_90efb.vcxproj]
+
+
+
+Determining if the function clock_gettime exists in the rt failed with the following output:
+Change Dir: E:/Github/MyThesis/grpc/CMakeFiles/CMakeScratch/TryCompile-cdmzfn
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2022/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe cmTC_f9f26.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:m && MSBuild version 17.5.1+f6fdcf537 for .NET Framework
+
+  Microsoft (R) C/C++-Optimierungscompiler Version 19.35.32217.1 für x64
+  CheckFunctionExists.c
+  Copyright (C) Microsoft Corporation. Alle Rechte vorbehalten.
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=clock_gettime /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f9f26.dir\Debug\\" /Fd"cmTC_f9f26.dir\Debug\vc143.pdb" /external:W3 /Gd /TC /wd4065 /wd4506 /wd4200 /wd4291 /wd4244 /wd4267 /wd4987 /wd4774 /wd4819 /wd4996 /wd4619 /wd4503 /errorReport:queue  /utf-8 "E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-cdmzfn\CheckFunctionExists.c"
+LINK : fatal error LNK1104: Datei "rt.lib" kann nicht geöffnet werden. [E:\Github\MyThesis\grpc\CMakeFiles\CMakeScratch\TryCompile-cdmzfn\cmTC_f9f26.vcxproj]
+
+
+
